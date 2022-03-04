@@ -1,0 +1,56 @@
+substitutions:
+  # Ge1mer board
+  board: esp12e
+  pin_relay_answer: GPIO12    # 330 Ohm, NO relay
+  pin_relay_phone: GPIO13     # Open relay
+  pin_relay_mute: GPIO16      # 50 Ohm, NO relay
+  pin_led_red: GPIO5
+  pin_led_green: GPIO4
+  pin_led_blue: GPIO15
+  pin_call_detect: GPIO2
+  pin_btn_accept: GPIO0
+
+  # Board name
+  board_name: "Domofondig"
+  mdns_name: "domofondig"
+
+  # Relays configuration
+  phone_relay_inverted: 'false'  # Set to 'false' if you have NO phone relay
+
+  # Wifi credentials
+  wifi_ssid: "Qadro"
+  wifi_password: "89279669606"
+  ap_ssid: "Domofon"
+  ap_password: "1234567890"
+
+  # MQTT credentials
+  mqtt_host: "10.0.0.1"
+  mqtt_port: "1883"
+  mqtt_username: ""
+  mqtt_password: ""
+
+  # OTA and API
+  ota_password: "esphome"
+  api_password: "esphome"
+
+  # Software configuration
+  call_end_detect_delay: 6000ms     # Interval between rings to detect incoming call
+  relay_before_answer_delay: 400ms  # Delay before answer call
+  relay_answer_on_time: 5000ms      # Delay between answer call and open/close door
+  relay_open_on_time: 500ms         # How long the "open door button" will be pressed
+  relay_after_open_delay: 2000ms     # Delay in "answer" state after opening door
+  short_click_time_from: 50ms       # Short button click min time
+  short_click_time_to: 1000ms       # Long button click min time
+
+########### End user configuration ###########
+
+packages:
+  base: !include domofondig_packages/base.yaml
+  api: !include domofondig_packages/api.yaml
+  #mqtt: !include domofon_packages/mqtt.yaml
+  number: !include domofondig_packages/number.yaml
+  script: !include domofondig_packages/script.yaml
+  output: !include domofondig_packages/output.yaml
+  switch: !include domofondig_packages/switch.yaml
+  light: !include domofondig_packages/light.yaml
+  binary_sensor: !include domofondig_packages/binary_sensor.yaml
