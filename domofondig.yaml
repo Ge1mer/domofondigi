@@ -19,7 +19,7 @@ substitutions:
 
   # Wifi credentials
   wifi_ssid: "Qadro"
-  wifi_password: "89279669606"
+  wifi_password: "0987654321"
   ap_ssid: "Domofon"
   ap_password: "1234567890"
 
@@ -41,6 +41,7 @@ substitutions:
   relay_after_open_delay: 2000ms     # Delay in "answer" state after opening door
   short_click_time_from: 50ms       # Short button click min time
   short_click_time_to: 1000ms       # Long button click min time
+
 
 ########### End user configuration ###########
 
